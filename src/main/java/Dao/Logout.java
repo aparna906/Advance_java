@@ -1,4 +1,4 @@
-package Controller;
+package Dao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,12 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/profile")
-public class Profile extends HttpServlet {
+@WebServlet("/logout")
+public class Logout extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        String user = (String) session.getAttribute("login");
-        System.out.println(user);
+        session.invalidate();
+        resp.sendRedirect("/login.jsp");
     }
 }

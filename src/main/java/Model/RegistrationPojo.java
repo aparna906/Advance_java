@@ -18,6 +18,7 @@ public class RegistrationPojo {
     }
 
     public String getPartyId() {
+
         return partyId;
     }
 
@@ -89,8 +90,7 @@ public class RegistrationPojo {
         this.phone = phone;
     }
 
-    public RegistrationPojo(String partyId, String firstName, String lastName, String address, String city, int zip,
-                            String state, String country, String phone) {
+    public RegistrationPojo(String partyId, String firstName, String lastName, String address, String city, int zip, String state, String country, String phone) {
         this.partyId = partyId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -104,17 +104,7 @@ public class RegistrationPojo {
 
     @Override
     public String toString() {
-        return "RegistrationPojo{" +
-                "partyId='" + partyId + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", country='" + country + '\'' +
-                ", zip=" + zip +
-                ", phone='" + phone + '\'' +
-                '}';
+        return "RegistrationPojo{" + "partyId='" + partyId + '\'' + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", address='" + address + '\'' + ", city='" + city + '\'' + ", state='" + state + '\'' + ", country='" + country + '\'' + ", zip=" + zip + ", phone='" + phone + '\'' + '}';
     }
 }
 

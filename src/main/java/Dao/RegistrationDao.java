@@ -15,7 +15,7 @@ public class RegistrationDao {
             String UserId = loginPojo.getUserId();
             String password = loginPojo.getPassword();
 
-            String checkEmail = "select userLoginId from userlogin";
+            String checkEmail = "select userLoginId from userlogin" ;
             Statement statement = con.createStatement();
             ResultSet resultSet = statement.executeQuery(checkEmail);
 
@@ -39,9 +39,7 @@ public class RegistrationDao {
                 }
                 statement1.close();
 
-                PreparedStatement ps = con.prepareStatement("INSERT INTO `aparna`.`party` " +
-                        "(partyId, firstName, lastName, address, city, zip, state, country, phone) " +
-                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);\n");
+                PreparedStatement ps = con.prepareStatement("INSERT INTO `aparna`.`party` " + "(partyId, firstName, lastName, address, city, zip, state, country, phone) " + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);\n");
                 ps.setInt(1, partyId);
                 ps.setString(2, registrationPojo.getFirstName());
                 ps.setString(3, registrationPojo.getLastName());
@@ -52,8 +50,7 @@ public class RegistrationDao {
                 ps.setString(8, registrationPojo.getCountry());
                 ps.setString(9, registrationPojo.getPhone());
 
-                PreparedStatement ps1 = con.prepareStatement("INSERT INTO `aparna`.`userlogin` " +
-                        "(`userLoginId`, `password`, `partyId`) VALUES (?,?,?);");
+                PreparedStatement ps1 = con.prepareStatement("INSERT INTO `aparna`.`userlogin` " + "(`userLoginId`, `password`, `partyId`) VALUES (?,?,?);");
                 ps1.setString(1, UserId);
                 ps1.setString(2, password);
                 ps1.setInt(3, partyId);

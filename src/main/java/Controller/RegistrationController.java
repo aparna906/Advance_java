@@ -28,11 +28,10 @@ public class RegistrationController extends HttpServlet {
         String country = request.getParameter("country");
         String phone = request.getParameter("phone");
         String userId = request.getParameter("userId");
-        System.out.println(userId);
         String password = request.getParameter("password");
 
         RegistrationPojo registrationPojo = new RegistrationPojo();
-        LoginPojo loginPojo  = new LoginPojo();
+        LoginPojo loginPojo = new LoginPojo();
 
         registrationPojo.setFirstName(firstName);
         registrationPojo.setLastName(lastName);
@@ -49,26 +48,25 @@ public class RegistrationController extends HttpServlet {
         boolean registerValidate = false;
         registerValidate = RegistrationDao.saveData(registrationPojo, loginPojo);
         if (registerValidate) {
-                  RequestDispatcher requestDispatcher = request.getRequestDispatcher("/profile.jsp");
-                    HttpSession httpSession = request.getSession(true);
-                    httpSession.setAttribute("userId",userId);
-                    httpSession.setAttribute("password",password);
-                    httpSession.setAttribute("firstName", registrationPojo.getFirstName());
-                    httpSession.setAttribute("lastName", registrationPojo.getLastName());
-                    httpSession.setAttribute("address",address);
-                    httpSession.setAttribute("city",registrationPojo.getCity());
-                    httpSession.setAttribute("zip", registrationPojo.getZip());
-                    httpSession.setAttribute("state", registrationPojo.getState());
-                    httpSession.setAttribute("country", registrationPojo.getCountry());
-                    httpSession.setAttribute("phone", registrationPojo.getPhone());
-                    requestDispatcher.forward(request, response);
-                }
-            else{
-                RequestDispatcher rd1 = request.getRequestDispatcher("signup.jsp");
-                request.setAttribute("error msg","Already Exist");
-                rd1.forward(request,response);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/display.jsp");
+            HttpSession httpSession = request.getSession(true);
+            httpSession.setAttribute("userId", userId);
+            httpSession.setAttribute("password", password);
+            httpSession.setAttribute("firstName", registrationPojo.getFirstName());
+            httpSession.setAttribute("lastName", registrationPojo.getLastName());
+            httpSession.setAttribute("address", address);
+            httpSession.setAttribute("city", registrationPojo.getCity());
+            httpSession.setAttribute("zip", registrationPojo.getZip());
+            httpSession.setAttribute("state", registrationPojo.getState());
+            httpSession.setAttribute("country", registrationPojo.getCountry());
+            httpSession.setAttribute("phone", registrationPojo.getPhone());
+            requestDispatcher.forward(request, response);
+        } else {
+            RequestDispatcher rd1 = request.getRequestDispatcher("signup.jsp");
+            request.setAttribute("wrongLoginMsg", "Already Exist");
+            rd1.forward(request, response);
 
-            }
         }
     }
+}
 
