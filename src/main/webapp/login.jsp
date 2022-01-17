@@ -9,7 +9,7 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <title>:Login Page</title>
+    <title>Login Page</title>
   </head>
 
   <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
@@ -38,7 +38,8 @@
           <div class="card">
             <div class="card-header"><b>Welcome , </b> Please Login</div>
             <div class="card-body">
-              <form action="login" method="post">
+
+              <form action="login" name="login" method="post">
                 <div class="form-group row">
                   <label for="userid" class="col-md-4 col-form-label text-md-right">User Email id</label>
                   <div class="col-md-6">
@@ -57,11 +58,14 @@
                   <br><br>
 
                   <div class="col-md-6 offset-md-4">
-                    <a href="display.jsp"><button class="btn btn-outline-primary b1"><b> Login </b></button></a>
+                    <a href="display.jsp"><button type="submit" class="btn btn-outline-primary b1"><b> Login </b></button></a>
                   </div>
                   <a href="signup.jsp">
+
                     <h6>New user? Create an account</h6>
                   </a>
+
+
                 </div>
               </form>
             </div>

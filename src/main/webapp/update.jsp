@@ -21,7 +21,7 @@
 			<div class="container">
 				<br>
 
-				<form action="delete" method="post">
+				<form action="Update" method="post">
 					<div class="form-row">
 
 						<div class="form-group">

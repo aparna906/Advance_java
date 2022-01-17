@@ -19,6 +19,7 @@
 <%
  String firstName = request.getParameter("firstName");
  String lastName = request.getParameter("lastName");
+
  String driver = "com.mysql.cj.jdbc.Driver";
  String url = "jdbc:mysql://localhost:3306/aparna" ;
  String username = "root" ;

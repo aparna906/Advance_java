@@ -20,28 +20,30 @@
       <div class="col-md-6">
         <div class="card">
           <header class="card-header">
-            <a href="login.jsp" class="float-right btn btn-outline-primary mt-1">Log out</a>
-            <a href="display.jsp" class="float-right btn btn-outline-primary mt-1">Back</a>
+            <a href="login.jsp" class="float-right btn btn-outline-secondary mt-1">Log out</a>
+            <a href="display.jsp" class="float-right btn btn-outline-secondary mt-1">Back</a>
             <h4 class="card-title mt-2">Search</h4>
           </header>
           <article class="card-body">
 
-            <form action="search" method="post">
+            <form action="welcome.jsp" method="post">
               <div class="form-row">
                 <div class="col form-group">
                   <label>First name </label>
-                  <input type="text" class="form-control" placeholder="First Name" name="firstName">
+                  <input type="text" class="form-control" placeholder="First Name" name="name1">
                 </div>
 
                 <div class="col form-group">
                   <label>Last name</label>
-                  <input type="text" class="form-control" placeholder="Last Name" name="lastName">
+                  <input type="text" class="form-control" placeholder="Last Name" name="name2">
                 </div>
               </div>
 
               <div class="form-group">
-                <a href="recordSearch.jsp"><button type="button" class="btn btn-primary btn-lg">Search</button></a>
+                <button type="submit" class="btn btn-primary btn-lg">Search</button>
                 <a href="allRecord.jsp"><button type="button" class="btn btn-primary btn-lg">All Record</button></a>
+
+
               </div>
             </form>
           </article>

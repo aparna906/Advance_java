@@ -8,7 +8,7 @@
     <style>
       * {
         padding: 0px;
-        margn: 0px
+        margin: 0px
       }
     </style>
   </head>
