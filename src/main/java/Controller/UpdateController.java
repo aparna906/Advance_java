@@ -32,14 +32,9 @@ public class UpdateController extends HttpServlet {
             statement.setString(1, req.getParameter("firstName"));
             statement.setString(2, req.getParameter("lastName"));
             statement.setString(3, req.getParameter("city"));
-            System.out.println(req.getParameter("city"));
-            // statement.setInt(4, Integer.parseInt(req.getParameter("zip")));
             statement.setString(4, req.getParameter("state"));
-            System.out.println(req.getParameter("state"));
             statement.setString(5, req.getParameter("country"));
-            System.out.println(req.getParameter("country"));
             statement.setString(6, req.getParameter("phone"));
-            System.out.println(req.getParameter("phone"));
             statement.executeUpdate();
             con.close();
 
