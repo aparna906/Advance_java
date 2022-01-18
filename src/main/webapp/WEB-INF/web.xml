@@ -5,5 +5,17 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
+  <filter>
+      <filter-name>AuthFilter</filter-name>
+      <filter-class>service.FilterAuth</filter-class>
+  </filter>
 
+  <filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>/profile.jsp</url-pattern>
+    <url-pattern>/display.jsp</url-pattern>
+    <url-pattern>/search.jsp</url-pattern>
+    <url-pattern>/update.jsp</url-pattern>
+    <url-pattern>/delete.jsp</url-pattern>
+  </filter-mapping>
 </web-app>
