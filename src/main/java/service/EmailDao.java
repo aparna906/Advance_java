@@ -32,6 +32,7 @@ public class EmailDao {
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
+               // ResourceBundle resourceBundle = ResourceBundle.getBundle("email");
                 ResourceBundle resourceBundle = ResourceBundle.getBundle("email");
                 String userName = resourceBundle.getString("userName");
                 String password= resourceBundle.getString("password");
