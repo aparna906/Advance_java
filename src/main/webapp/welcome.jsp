@@ -54,7 +54,7 @@
                                         statement=connection.createStatement();
                                         System.out.println(request.getParameter("name1"));
                                         System.out.println(request.getParameter("name2")); 
-                                        fname=request.getParameter("name1"); 
+                                        String fname=request.getParameter("name1");
                                         String lname=request.getParameter("name2");
                                         String sql="SELECT * FROM party p join userlogin ul on p.partyId = ul.partyId WHERE firstName ='"
                                         + fname + "' AND lastName='" + lname + "'" ;
@@ -146,11 +146,12 @@
             </div>
         </div>
 
-<%}
-  connection.close();
-   } catch (Exception e) {
-    e.printStackTrace();
-    } %>
-     </table>
-   </body>
-</html>
+        <%} connection.close();
+     } catch (Exception e) { 
+         e.printStackTrace(); 
+        }
+         %>
+            </table>
+            </body>
+
+            </html>
